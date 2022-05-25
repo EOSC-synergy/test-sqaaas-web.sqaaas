@@ -1,12 +1,10 @@
-version: "3.7"
-
 services:
-  node:
-    image: node:12
-    container_name: node
-    hostname: "sqaaas-web"
+  qc.acc_crabby-pink-cattle:
+    command: sleep 6000000
+    image: bitnami/git:2.34.1
     volumes:
-     - type: bind
-       source: ./
-       target: /sqaaas-web
-    command: sleep infinity
+    - source: ./
+      target: /sqaaas-build
+      type: bind
+    working_dir: /sqaaas-build
+version: '3.7'
